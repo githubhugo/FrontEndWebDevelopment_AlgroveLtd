@@ -1,45 +1,48 @@
 $(document).ready(function() {
 
 
-/************** ACCORDIAN *****************/
+/************** ACCORDIAN MENU *****************/
 
 $('#accordion-menu > ul > li:has(ul)').addClass("has-sub");
 $('#accordion-menu > ul > li > a').click(function() {
 
 	var checkElement = $(this).next();
-    console.log(checkElement);
+      console.log(checkElement);
 
 	$('#accordion-menu li').removeClass('active');
 	$(this).closest('li').addClass('active');	
 
 	if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-
-		$(this).closest('li').removeClass('active'); 
-		checkElement.slideUp('normal');
+  		$(this).closest('li').removeClass('active'); 
+  		checkElement.slideUp('normal');
 	}
 
 	if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-		$('#accordion-menu ul ul:visible').slideUp('normal');
-		checkElement.slideDown('normal'); 
+  		$('#accordion-menu ul ul:visible').slideUp('normal');
+  		checkElement.slideDown('normal'); 
 	}
 
 	if (checkElement.is('ul')) {
-		return false;
-		} else {
-		return true;
+  		return false;
+  		} else {
+  		return true;
 	}
 });
 
 
-/************** BURGER ******************/
+/************** BURGER MENU ******************/
 
 $('.burger').click(function(e) {
-        $(this).toggleClass('nav');
-        $('.burger-menu ul').toggleClass('nav');
- 
+  $(this).toggleClass('nav');
+  $('.burger-menu ul').toggleClass('nav');
         e.preventDefault();
-    });
+});
 
+$(window).resize(function() {
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    $('.burger-menu ul').addClass('nav');  
+  }
+});
 
 });
 

@@ -11,7 +11,6 @@ body {
     font-family: 'Montserrat',Arial,sans-serif;
 }
 
-
 .outer-table {
     display: table;
     margin: 0 auto;
@@ -33,27 +32,23 @@ section, aside {
 }
 
 
-/*************  VARIABLES  ***********************/
-
-@main-color: #4080f0;
-
-
 /*************  HELPERS  *************************/
 
 .no-float {float:none;}
 
 
-
-/****************  NAV  *************************/
-
+/**************** NAV *************************/
 
 nav {background-color:#9999cc;}
 
 
 .container-fluid {
     border-color: grey;
-    background-color: transparent;
-    
+    background-color: transparent; 
+}
+
+.navbar-brand>img {
+    display: inline;
 }
 
 .top-nav {
@@ -76,36 +71,36 @@ nav {background-color:#9999cc;}
 @media screen and (max-width: 767px) {
 
     .burger-menu {
-        position:relative;
-        display:block;
+        position: relative;
+        display: block;
     }
  
     .burger-menu ul.nav {
-        display:none;
+        display: none;
     }
  
     .burger-menu ul {
-        position:absolute;
-        top:50px;
-        right:15px;
-        padding:10px 18px;
-        box-shadow:0px 1px 1px rgba(0,0,0,0.15);
-        border-radius:10px;
-        background:#66a992;
+        position: absolute;
+        top: 50px;
+        right: 15px;
+        padding: 10px 18px;
+        box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+        border-radius: 10px;
+        background: #66a992;
         z-index: 1;
     }
  
     .burger-menu ul:after {
-        width:0px;
-        height:0px;
-        position:absolute;
-        top:0%;
-        left:90px;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: 0%;
+        left: 90px;
         content:'';
         transform:translate(0%, -100%);
-        border-left:7px solid transparent;
-        border-right:7px solid transparent;
-        border-bottom:7px solid #66a992;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #66a992;
     }
  
     .burger-menu li {
@@ -119,7 +114,8 @@ nav {background-color:#9999cc;}
     }
  
     .burger {
-        padding:11px 15px;
+        margin-top: 2px;
+        padding:10px 15px;
         float:right;
         display:inline-block;
         box-shadow:0px 1px 1px rgba(0,0,0,0.15);
@@ -139,9 +135,9 @@ nav {background-color:#9999cc;}
 
 }
 
-/* Top left text toggle for xs screens*/
+/** Logo and text in top left toggle for xs screens **/
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 397px) {
 
     .navbar-brand {
         display: none;
@@ -149,10 +145,9 @@ nav {background-color:#9999cc;}
 
 }
 
-/*************  HEADER  **********************/
+/***************  HEADER  **********************/
 
 header{background-color: #ffff99}
-
 
 header {
     position: relative;
@@ -180,7 +175,7 @@ header {
 }
 
 
-
+/**** Smaller sized background image media query for < 793px width ****/
 
 @media screen and (max-width: 792px) {
 
@@ -195,13 +190,10 @@ header {
     padding: 10% 10%;
 }
 
-
-
 }
 
 
-/************* BUTTON  *************************/
-
+/************* MAIN BUTTON *************************/
 
 a.button{
     background: #ECECEC;
@@ -229,19 +221,21 @@ a.button:active{
     background:-webkit-linear-gradient(top, #d1d1d1 0%,#ECECEC 100%);
 }
 
-/*************  ABOUT  *************************/
+
+/************* ABOUT SECTION *************************/
 
 #about{background-color: #ff9966;
 min-height: 400px;}
 
 
-/************** LOCATIONS ***********************/
+/************** LOCATIONS SECTION ***********************/
 
 #locations{background-color: #6699ff;}
 
-/************** ACCORDIAN ***********************/
 
-/* The basic menu structure*/
+/************** ACCORDIAN MENU ***********************/
+
+/** The basic menu structure **/
 #accordion-menu,
 #accordion-menu ul,
 #accordion-menu li,
@@ -255,21 +249,19 @@ min-height: 400px;}
     line-height: 1;   
     font-size: 18px;
     position: relative;
-
 }
+
 #accordion-menu a {
     line-height: 1.3;
 }
 
-/*the outer div of the menu*/
+/** the outer div of the menu **/
 #accordion-menu {
     width: 100%;
     height: auto;
 }
 
-/*the firt element (home)*/
-
-
+/** the firt element **/
 #accordion-menu  > ul > li:first-child > a {
     padding: 15px 10px;   
     text-align: center;
@@ -279,36 +271,32 @@ min-height: 400px;}
 #accordion-menu  > ul > li:first-child > a > span {
     padding: 0;
 }
+
 #accordion-menu  > ul > li:first-child:hover {
     text-shadow: 3px 3px 30px white;
 }
 
 #accordion-menu > ul > li {
     background: #6699ff;
-    
-}
-#accordion-menu > ul > li:hover {
-    1background: blue;
-    1text-shadow: 3px 3px 30px white;
 }
 
 #accordion-menu > ul > li > a {
     font-size: .9em;
     display: block;
-    color: #ffffff;
-   
+    color: #ffffff; 
 }
+
 #accordion-menu > ul > li > a > span {
     display: block;
-    padding: 12px 10px;
-   
+    padding: 12px 10px;  
 }
+
 #accordion-menu > ul > li > a:hover {
-    1text-decoration: none;
     text-shadow: 3px 3px 30px white;
 }
 
-#accordion-menu > ul > li.has-sub > a span::after { /* The has-sun class will be added with jquery*/
+/** N.B. The has-sub class will be added using custom.js line 6 **/
+#accordion-menu > ul > li.has-sub > a span::after { 
     content:"+";
     position: absolute;
     right: 10px;
@@ -323,11 +311,10 @@ min-height: 400px;}
     right: 10px;
     bottom:2px;
     color: #fff;
-    font-size: 30px;
-   
+    font-size: 30px;  
 }
 
-/* Sub menu */
+/** Sub menu **/
 #accordion-menu  ul ul {
     display: none;
     background-color: #5699ff;    
@@ -335,8 +322,7 @@ min-height: 400px;}
 
  ul ul.active{
     display: none;
-    text-shadow: 3px 3px 30px white;
-      
+    text-shadow: 3px 3px 30px white;    
 }
 
 #accordion-menu  ul ul li {
@@ -353,19 +339,18 @@ min-height: 400px;}
 
 #accordion-menu
  ul ul a:before {
-    content: '>>';
+    content: '▼';
     position: absolute;
     right: 10px;
     color: #fff;
 }
 
 #accordion-menu ul ul a:hover {    
-    1background: blue;
     text-shadow: 3px 3px 30px white;
 }
 
 
-/************** ROOMS ***********************/
+/************** ROOMS SECTION ***********************/
 
 #rooms{background-color: #99ff66}
 
@@ -409,25 +394,28 @@ min-height: 400px;}
     transition: all 0.2s ease-in;
 }
 
+#gallery li a img:hover + p{
+    margin: 0;
+    padding: 5%;
+    font-size: 1em;
+    color: #f5f5f5;
+    background-color: #7f7f7f;
+    border-radius: 0px 0px 10px 10px;
+    transition: all 0.2s ease-in;
+}
+
 img {
     max-width: 100%;
 }
 
-.rotate180 {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
 
-
-/************** CONTACT ********************/
+/************** CONTACT SECTION ********************/
 
 #contact{
     background-color: #6699ff;
-    height: 700px;
+    height: 725px;
 }
+
 
 /************** CONTACT FORM ***************/
 
@@ -503,11 +491,4 @@ fieldset {
 #contact-form input:focus, #contact-form textarea:focus {
     outline:0;
     border:1px solid #999;
-}
-
-
-/************** FOOTER ***************/
-
-img.social-icon:hover {
-    border: 3px 3px 30px white;
 }
